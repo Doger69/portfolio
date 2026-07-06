@@ -7,5 +7,6 @@ import svgr from 'vite-plugin-svgr'
 // NOTE: `base` is intentionally unset for zero-config Vercel/Netlify deploys.
 // For GitHub Pages, set base: '/<repo-name>/' and run `npm run deploy`.
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [react(), tailwindcss(), svgr()],
 })

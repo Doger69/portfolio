@@ -3,7 +3,6 @@ import { motion } from 'motion/react'
 import { HERO, SOCIALS } from '../../constants'
 import Button from '../UI/Button'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../UI/icons'
-import HeroIllustration from './HeroIllustration'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -107,7 +106,13 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="order-first md:order-last"
         >
-          <HeroIllustration className="mx-auto w-full max-w-sm md:max-w-md" />
+          <img
+            src="/portfolio/hero-illustration.png"
+            alt="Illustration of a developer working on a laptop at a desk"
+            className="mx-auto w-full max-w-sm object-contain md:max-w-md"
+            loading="eager"
+            decoding="async"
+          />
         </motion.div>
       </div>
     </section>

@@ -1,80 +1,103 @@
 import type { SVGProps } from 'react'
 
-/** Original flat, monochrome illustration of a seated developer working on a
- *  laptop. Dependency-free and purely decorative (aria-hidden). */
+/** Decorative editorial-style illustration for the hero section. */
 export default function HeroIllustration(props: SVGProps<SVGSVGElement>) {
   const ink = '#000000'
-  const cream = '#f5f5f5'
+  const paper = '#f5f5f5'
   const accent = '#ef4444'
 
   return (
-    <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
-      {/* Backdrop */}
-      <circle cx="232" cy="210" r="185" fill={ink} opacity="0.04" />
-      <circle cx="232" cy="210" r="185" stroke={ink} strokeOpacity="0.06" strokeWidth="2" strokeDasharray="4 10" />
-
-      {/* Ground line */}
-      <line x1="70" y1="402" x2="392" y2="402" stroke={ink} strokeWidth="3" strokeLinecap="round" />
-
-      {/* Seat */}
-      <ellipse cx="232" cy="338" rx="74" ry="26" fill={ink} />
-
-      {/* Legs (light trousers) */}
-      <path d="M196,316 L178,392 L214,392 L224,318 Z" fill={cream} stroke={ink} strokeWidth="4" strokeLinejoin="round" />
-      <path d="M268,316 L286,392 L250,392 L240,318 Z" fill={cream} stroke={ink} strokeWidth="4" strokeLinejoin="round" />
-
-      {/* Shoes */}
-      <rect x="166" y="388" width="54" height="16" rx="8" fill={ink} />
-      <rect x="244" y="388" width="54" height="16" rx="8" fill={ink} />
-
-      {/* Torso / jacket (broad shoulders) */}
-      <path d="M166,188 Q232,154 298,188 L300,316 L164,316 Z" fill={ink} />
-      {/* Collar accent */}
-      <path d="M214,168 L232,196 L250,168" stroke={cream} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <line x1="232" y1="196" x2="232" y2="300" stroke={cream} strokeOpacity="0.25" strokeWidth="3" />
-
-      {/* Neck */}
-      <rect x="222" y="138" width="20" height="26" rx="8" fill={cream} stroke={ink} strokeWidth="4" />
-
-      {/* Head */}
-      <circle cx="232" cy="112" r="38" fill={cream} stroke={ink} strokeWidth="4" />
-      {/* Ears */}
-      <circle cx="195" cy="115" r="6" fill={cream} stroke={ink} strokeWidth="3" />
-      <circle cx="269" cy="115" r="6" fill={cream} stroke={ink} strokeWidth="3" />
-      {/* Short, textured masculine hair */}
-      <path d="M194,104 Q190,66 214,67 Q224,57 236,65 Q250,60 258,71 Q272,76 270,104 Q262,82 232,82 Q204,82 194,104 Z" fill={ink} />
-      {/* Eyebrows */}
-      <path d="M211,101 Q219,97 227,101" stroke={ink} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M237,101 Q245,97 253,101" stroke={ink} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      {/* Eyes */}
-      <circle cx="219" cy="110" r="3" fill={ink} />
-      <circle cx="245" cy="110" r="3" fill={ink} />
-      {/* Nose */}
-      <path d="M232,114 L228,127 Q232,130 236,127" stroke={ink} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      {/* Full beard + mustache */}
-      <path d="M197,116 Q195,142 210,156 Q221,166 232,166 Q243,166 254,156 Q269,142 267,116 Q259,140 232,142 Q205,140 197,116 Z" fill={ink} />
-      <path d="M219,133 Q232,139 245,133 Q239,129 232,130 Q225,129 219,133 Z" fill={ink} />
-
-      {/* Arms reaching to the laptop */}
-      <path d="M174,202 Q146,252 184,300 L204,296 Q176,252 196,210 Z" fill={ink} />
-      <path d="M290,202 Q318,252 280,300 L260,296 Q288,252 268,210 Z" fill={ink} />
-
-      {/* Laptop on the lap */}
-      <path d="M150,326 L314,326 L300,344 L164,344 Z" fill={ink} />
-      <rect x="170" y="262" width="124" height="66" rx="8" fill={ink} stroke={cream} strokeWidth="3" />
-      <circle cx="232" cy="295" r="9" fill={accent} />
+    <svg viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
+      <circle cx="330" cy="188" r="150" fill={ink} opacity="0.035" />
+      <line x1="34" y1="386" x2="486" y2="386" stroke={ink} strokeWidth="3" strokeLinecap="round" />
 
       {/* Plant */}
-      <path d="M372,392 L364,356 L392,356 L384,392 Z" fill={ink} />
-      <path d="M378,356 Q360,332 366,312 Q380,330 378,356" fill={ink} />
-      <path d="M378,356 Q396,332 390,312 Q376,330 378,356" fill={accent} opacity="0.9" />
+      <path d="M58 336H92L86 382H64L58 336Z" fill={ink} />
+      <line x1="75" y1="246" x2="75" y2="336" stroke={ink} strokeWidth="2.4" strokeLinecap="round" />
+      {[256, 278, 300, 322].map((y, i) => (
+        <g key={y}>
+          <circle cx="75" cy={y} r="11.5" fill={paper} stroke={ink} strokeWidth="2" />
+          <path
+            d={i % 2 === 0 ? `M75 ${y}C61 ${y - 4} 54 ${y - 14} 52 ${y - 22}` : `M75 ${y}C89 ${y - 4} 96 ${y - 14} 98 ${y - 22}`}
+            stroke={ink}
+            strokeWidth="2"
+            strokeLinecap="round"
+            fill="none"
+          />
+        </g>
+      ))}
 
-      {/* Floating accents */}
-      <text x="78" y="150" fontFamily="monospace" fontSize="30" fontWeight="700" fill={ink} opacity="0.18">
-        {'</>'}
-      </text>
-      <circle cx="96" cy="300" r="9" fill={ink} opacity="0.5" />
-      <circle cx="372" cy="170" r="6" fill={accent} />
+      {/* Background board */}
+      <rect x="300" y="108" width="172" height="112" fill={paper} stroke={ink} strokeWidth="2.2" />
+      <rect x="300" y="108" width="172" height="18" fill={paper} stroke={ink} strokeWidth="2.2" />
+      <circle cx="312" cy="117" r="3" fill={ink} opacity="0.35" />
+      <circle cx="324" cy="117" r="3" fill={ink} opacity="0.2" />
+      <rect x="322" y="138" width="24" height="40" fill={paper} stroke={ink} strokeWidth="1.8" />
+      <path d="M329 138V130H339V138" stroke={ink} strokeWidth="1.6" strokeLinecap="round" />
+      <rect x="364" y="148" width="54" height="28" fill={paper} stroke={ink} strokeWidth="1.6" />
+      <rect x="388" y="176" width="56" height="28" fill={paper} stroke={ink} strokeWidth="1.6" />
+      <rect x="412" y="136" width="40" height="24" fill={paper} stroke={ink} strokeWidth="1.6" />
+      <line x1="376" y1="160" x2="428" y2="160" stroke={ink} strokeOpacity="0.32" strokeWidth="1.8" strokeLinecap="round" />
+      <line x1="328" y1="212" x2="440" y2="212" stroke={ink} strokeOpacity="0.14" strokeWidth="2" strokeDasharray="5 8" />
+
+      {/* Chair */}
+      <path d="M138 246C138 232 148 222 162 222H178C192 222 202 232 202 246V300H138V246Z" fill={paper} stroke={ink} strokeWidth="2.4" />
+      <path d="M138 260H126C114 260 106 252 106 240C106 228 114 220 126 220H140" stroke={ink} strokeWidth="2.4" strokeLinecap="round" />
+      <line x1="154" y1="300" x2="148" y2="386" stroke={ink} strokeWidth="3" strokeLinecap="round" />
+      <line x1="188" y1="300" x2="196" y2="386" stroke={ink} strokeWidth="3" strokeLinecap="round" />
+
+      {/* Head: side profile */}
+      <path
+        d="M190 120C209 120 223 133 223 151C223 166 214 180 200 186C192 190 183 190 174 187C159 181 149 167 149 151C149 134 163 120 190 120Z"
+        fill={paper}
+        stroke={ink}
+        strokeWidth="2.4"
+      />
+      <path d="M155 149C157 130 172 112 196 112C212 112 226 120 232 138C221 132 209 130 197 130C182 130 169 136 155 149Z" fill={ink} />
+      <path d="M166 137C177 126 192 124 206 126" stroke={ink} strokeWidth="2.2" strokeLinecap="round" />
+      <circle cx="187" cy="156" r="2.8" fill={ink} />
+      <path d="M170 152C166 148 163 143 161 138" stroke={ink} strokeWidth="4.4" strokeLinecap="round" />
+      <path d="M210 145C214 149 216 153 217 159" stroke={ink} strokeWidth="4.4" strokeLinecap="round" />
+      <path d="M194 158C197 161 201 161 205 159" stroke={ink} strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M199 160L194 170C198 172 203 171 207 167" stroke={ink} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M197 178C203 181 210 178 214 173" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+
+      {/* Neck and torso */}
+      <path d="M181 186H201V200C201 206 196 211 191 211C185 211 181 206 181 200V186Z" fill={paper} stroke={ink} strokeWidth="2.2" />
+      <path
+        d="M150 210C154 196 168 188 191 188C214 188 228 198 232 214L232 274H145V214L150 210Z"
+        fill={paper}
+        stroke={ink}
+        strokeWidth="2.4"
+        strokeLinejoin="round"
+      />
+      <path d="M165 201C170 194 179 190 191 190C203 190 212 194 217 201L206 214C202 208 197 205 191 205C185 205 180 208 176 214L165 201Z" fill={ink} />
+      <line x1="183" y1="214" x2="181" y2="244" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+      <line x1="199" y1="214" x2="201" y2="244" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="181" cy="247" r="2.2" fill={ink} />
+      <circle cx="201" cy="247" r="2.2" fill={ink} />
+
+      {/* Left forearm resting toward keyboard */}
+      <path d="M152 246C167 244 182 247 198 255L244 270L238 282L188 270C174 266 163 264 152 264V246Z" fill={paper} stroke={ink} strokeWidth="2.4" strokeLinejoin="round" />
+      <path d="M236 271L279 276L276 286L234 281Z" fill={paper} stroke={ink} strokeWidth="2" strokeLinejoin="round" />
+
+      {/* Desk */}
+      <rect x="228" y="286" width="214" height="12" rx="2" fill={paper} stroke={ink} strokeWidth="2.2" />
+      <line x1="254" y1="298" x2="246" y2="386" stroke={ink} strokeWidth="3" strokeLinecap="round" />
+      <line x1="420" y1="298" x2="428" y2="386" stroke={ink} strokeWidth="3" strokeLinecap="round" />
+
+      {/* Laptop: lower, wider, angled like reference */}
+      <path d="M308 224H398L414 330H324L308 224Z" fill={ink} />
+      <circle cx="357" cy="286" r="7.2" fill={paper} />
+      <path d="M292 330H424L410 348H306L292 330Z" fill={ink} />
+
+      {/* Lower body seated */}
+      <path d="M165 274H228L222 386H203L199 316L194 386H175L165 274Z" fill={paper} stroke={ink} strokeWidth="2.4" strokeLinejoin="round" />
+
+      {/* Accent dots */}
+      <circle cx="270" cy="106" r="6.5" fill={ink} opacity="0.14" />
+      <circle cx="476" cy="186" r="7" fill={accent} />
+      <circle cx="474" cy="86" r="5.5" fill={ink} opacity="0.1" />
     </svg>
   )
 }
