@@ -1,5 +1,6 @@
 import Header from '../components/Header/Header'
 import Hero from '../components/Hero/Hero'
+import Stats from '../components/Stats/Stats'
 import Skills from '../components/Skills/Skills'
 import AboutMe from '../components/AboutMe/AboutMe'
 import Experience from '../components/Experience/Experience'
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <Stats />
         <Skills />
         <AboutMe />
         <Experience />

@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill, Socials } from './types'
+import type { Experience, Project, Skill, Socials, Stat } from './types'
 
 /** Outbound contact links. The email here is the public-facing personal address. */
 export const SOCIALS: Socials = {
@@ -37,6 +37,18 @@ export const ABOUT_PARAGRAPHS: string[] = [
   "I built CiteFinder, a local-first RAG desktop app that answers only from a user's own PDFs and cites the exact file and page. I benchmarked retrieval on a 7,000+ chunk corpus and raised accuracy from 0.50 to 0.92 hit@1 by selecting a better embedding model, then shipped the whole stack as a one-click Windows installer.",
   "I designed and deployed a full-stack MERN app end to end — JWT auth, bcrypt, rate limiting, 20 automated API tests, and an LLM feature that scores how well a resume matches a job. Most recently I built mimicfable, a Claude Code subagent with a reproducible 12-run benchmark against baseline Opus, and published the honest result: correctness was a tie; the real difference was test discipline.",
   "I'm currently a Software Engineer Intern at AlpharexX, working on full-stack development, backend APIs, server security, and AI integration. I work daily with AI coding assistants, care about clean and tested code, and prefer building things that work over things that just demo well.",
+]
+
+/** Headline metrics shown in the stats strip below the hero. */
+export const STATS: Stat[] = [
+  { value: '0.50 → 0.92', label: 'hit@1 retrieval accuracy (CiteFinder)' },
+  { value: '7,000+', label: 'chunk ground-truthed eval corpus' },
+  { value: '12', label: 'benchmark runs · 46/46 hidden checks' },
+  { value: '20', label: 'automated backend tests, LLM mocked' },
+  { value: '12', label: 'JWT-secured REST endpoints' },
+  { value: '80%', label: 'less manual outreach effort' },
+  { value: '100%', label: 'on-time freelance delivery' },
+  { value: '3', label: 'live shipped products' },
 ]
 
 /** Flat, curated skills shown as square icon cards.

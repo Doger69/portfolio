@@ -14,6 +14,14 @@ export interface SkillGroup {
   items: Skill[]
 }
 
+/** A headline metric shown in the stats strip. */
+export interface Stat {
+  /** The metric value, e.g. "0.50→0.92" or "100%". */
+  value: string
+  /** Short description of what the value measures. */
+  label: string
+}
+
 /** A portfolio project card. */
 export interface Project {
   /** Display index, e.g. "01", "02". */
