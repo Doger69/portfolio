@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill, Socials, Stat } from './types'
+import type { Certification, Experience, Project, Skill, Socials, Stat } from './types'
 
 /** Outbound contact links. The email here is the public-facing personal address. */
 export const SOCIALS: Socials = {
@@ -203,6 +203,30 @@ export const EXPERIENCE: Experience[] = [
       'Maintained a 100% on-time delivery record with positive feedback across all engagements.',
       'Managed each project independently, making technical decisions and communicating clearly across time zones.',
     ],
+  },
+]
+
+/** Verified certifications, all issued 2026 with no expiry. */
+export const CERTIFICATIONS: Certification[] = [
+  {
+    name: 'Model Context Protocol: Advanced Topics',
+    issuer: 'Anthropic',
+    url: 'https://verify.skilljar.com/c/4dvscats6hew',
+  },
+  {
+    name: 'Introduction to Model Context Protocol',
+    issuer: 'Anthropic',
+    url: 'https://verify.skilljar.com/c/gj5h2zs6dk3w',
+  },
+  {
+    name: 'Claude Code 101',
+    issuer: 'Anthropic',
+    url: 'https://verify.skilljar.com/c/mvtrmteapvhr',
+  },
+  {
+    name: 'Introduction to Claude Cowork',
+    issuer: 'Anthropic',
+    url: 'https://verify.skilljar.com/c/u8wkfrvsigfh',
   },
 ]
 

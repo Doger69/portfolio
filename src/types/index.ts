@@ -50,6 +50,14 @@ export interface Experience {
   highlights: string[]
 }
 
+/** A verifiable professional certification. */
+export interface Certification {
+  name: string
+  issuer: string
+  /** Public verification URL. */
+  url: string
+}
+
 /** Outbound social / contact links surfaced across the site. */
 export interface Socials {
   github: string
