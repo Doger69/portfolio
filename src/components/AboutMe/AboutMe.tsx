@@ -4,8 +4,8 @@ import SectionHeading from '../UI/SectionHeading'
 
 const FOCUS = [
   'Full-stack web apps (MERN) — designed, built, and deployed end to end',
-  'AI / ML systems — RAG pipelines, retrieval evaluation, LLM integration',
-  'Clean, tested code — REST APIs, auth, and multi-dimensional code reviews',
+  'AI / LLM systems — RAG pipelines, retrieval evaluation, and agent benchmarking',
+  'Clean, tested code — REST APIs, auth, and honest measurement over hype',
 ]
 
 export default function AboutMe() {
