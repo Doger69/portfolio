@@ -96,6 +96,16 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '04',
+    title: 'Job Hunt Agent',
+    meta: 'Personal Outreach Automation Tool · 2026',
+    description:
+      'A tool that does the boring 90% of a job search — finding people, researching them, and drafting honest first messages — while I keep the human 10%: review and send. Ranks every contact 0–100 offline, enriches only the top few to conserve a free search budget, extracts one real recent fact per company (with a source link) or falls back to an honest opener, and classifies each email as verified or guessed. Enforces a strict never-auto-send rule.',
+    technologies: ['Python', 'Groq API', 'Google CSE', 'Hunter.io', 'Apollo'],
+    liveUrl: null,
+    sourceUrl: null,
+  },
+  {
+    id: '05',
     title: 'Sales Automation System',
     meta: 'Final Year Project · 2025–2026',
     description:
@@ -105,7 +115,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '05',
+    id: '06',
     title: 'Student Grade Prediction',
     meta: 'Machine Learning Model · 2024',
     description:
@@ -115,7 +125,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '06',
+    id: '07',
     title: 'Cinema Database System',
     meta: 'Academic Project',
     description:
@@ -125,7 +135,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '07',
+    id: '08',
     title: 'Online Learning Platform',
     meta: 'System Design · Academic Project',
     description:
