@@ -1,4 +1,4 @@
-import { FaRocket, FaLaptopCode } from 'react-icons/fa6'
+import { FaRocket, FaLaptopCode, FaGraduationCap } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 import { EXPERIENCE } from '../../constants'
 import type { Experience as ExperienceType } from '../../types'
@@ -8,6 +8,7 @@ import SectionHeading from '../UI/SectionHeading'
 const BADGE_ICONS: Record<NonNullable<ExperienceType['icon']>, IconType> = {
   rocket: FaRocket,
   freelance: FaLaptopCode,
+  intern: FaGraduationCap,
 }
 
 export default function Experience() {

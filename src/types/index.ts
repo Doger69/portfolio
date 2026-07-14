@@ -35,7 +35,7 @@ export interface Experience {
   company: string
   period: string
   /** Badge icon slug (resolved in the Experience component). */
-  icon?: 'rocket' | 'freelance'
+  icon?: 'rocket' | 'freelance' | 'intern'
   /** Badge background color (hex). */
   accent?: string
   /** Short bullet points describing the engagement. */
