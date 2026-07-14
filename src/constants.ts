@@ -66,6 +66,16 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: '01',
+    title: 'mimicfable',
+    meta: 'A Disciplined Coding Agent, Benchmarked Honestly · 2026',
+    description:
+      "A custom Claude Code subagent plus a fully reproducible 12-run benchmark against baseline Opus, graded by hidden test suites validated before every run. I published the honest headline: correctness was a 46/46 tie — the replicated edge was test discipline (regression suites in 4/7 tasks vs 1/7). I corrected an earlier over-claim publicly and disclosed a confound I found in my own methodology.",
+    technologies: ['Claude Code SDK', 'Node.js', 'Python', 'Benchmarking', 'git'],
+    liveUrl: null,
+    sourceUrl: 'https://github.com/muzzary/mimicfable',
+  },
+  {
+    id: '02',
     title: 'CiteFinder',
     meta: 'Local-First RAG Citation Assistant · 2026',
     description:
@@ -75,7 +85,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: 'https://github.com/muzzary/citefinder',
   },
   {
-    id: '02',
+    id: '03',
     title: 'JobTracker',
     meta: 'Full-Stack MERN App with AI Assistant · 2026',
     description:
@@ -85,7 +95,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: 'https://github.com/muzzary/job-tracker',
   },
   {
-    id: '03',
+    id: '04',
     title: 'Sales Automation System',
     meta: 'Final Year Project · 2025–2026',
     description:
@@ -95,7 +105,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '04',
+    id: '05',
     title: 'Student Grade Prediction',
     meta: 'Machine Learning Model · 2024',
     description:
@@ -105,7 +115,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '05',
+    id: '06',
     title: 'Cinema Database System',
     meta: 'Academic Project',
     description:
@@ -115,7 +125,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '06',
+    id: '07',
     title: 'Online Learning Platform',
     meta: 'System Design · Academic Project',
     description:
