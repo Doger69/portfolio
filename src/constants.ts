@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     title: 'CiteFinder',
     meta: 'Local-First RAG Citation Assistant · 2026',
     description:
-      "A local-first desktop app that answers questions only from a user's own PDFs, cites the exact file and page, and generates APA/Harvard/IEEE citations. A benchmark-driven embedder swap raised hybrid retrieval from 0.50 to 0.92 hit@1 and 0.72 to 0.94 MRR. Shipped as a one-click Windows installer bundling a portable PostgreSQL + pgvector — no Docker required.",
+      "A local-first desktop app that answers strictly from a user's own PDFs and attributes every answer to a file and page. A hybrid pipeline (pgvector dense search + Postgres full-text, fused with Reciprocal Rank Fusion) plus a data-driven embedder swap raised retrieval from 0.50 to 0.92 hit@1 and 0.72 to 0.94 MRR on a 7,000+ chunk corpus. A strict grounding gate refuses off-topic queries before any LLM call, so it never fabricates a source. Ships as a one-click Windows installer with bundled PostgreSQL — no Docker.",
     technologies: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'ONNX', 'LLMs'],
     liveUrl: null,
     sourceUrl: 'https://github.com/muzzary/citefinder',
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     title: 'JobTracker',
     meta: 'Full-Stack MERN App with AI Assistant · 2026',
     description:
-      'A deployed MERN application helping job seekers track applications on a drag-and-drop Kanban board across five stages. Features a 12-endpoint REST API, JWT auth with bcrypt and rate limiting, an AI resume matcher (0–100 score + missing skills), and an AI assistant that tailors resumes, cover letters, and interview prep. Backed by 20 automated Jest/Supertest tests.',
+      'A deployed MERN app that tracks job applications on a drag-and-drop Kanban board and runs a free AI assistant on every application. Ships a 12-endpoint REST API with JWT + bcrypt auth, rate limiting, ownership-scoped queries, and 20 automated Jest/Supertest tests with the LLM mocked. The AI resume matcher scores fit 0–100 with unmet requirements; I re-architected the assistant from a flaky tool-calling planner into reliable parallel tools and documented why.',
     technologies: ['React 18', 'Node.js', 'Express', 'MongoDB', 'JWT', 'OpenRouter', 'Jest'],
     liveUrl: 'https://job-tracker-muzzary.vercel.app',
     sourceUrl: 'https://github.com/muzzary/job-tracker',
