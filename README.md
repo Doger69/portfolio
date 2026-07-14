@@ -2,6 +2,8 @@
 
 A single-page personal portfolio built with **React + TypeScript**, **Vite**, **Tailwind CSS v4**, and **Motion**. Content is fully data-driven from [`src/constants.ts`](src/constants.ts).
 
+**Sections:** hero → stats strip → skills → about → experience → projects → certifications → philosophy → contact.
+
 ## Stack
 
 | Concern      | Tool                                      |
@@ -50,8 +52,9 @@ visitor's email client via `mailto:`. To send through EmailJS instead:
 
 ## Editing content
 
-All copy and data live in [`src/constants.ts`](src/constants.ts): hero/about text, skills,
-projects, experience, and social links. The resume is served from
+All copy and data live in [`src/constants.ts`](src/constants.ts): hero/about text, headline
+stats, skills, projects, experience, certifications, philosophy values, and social links —
+each typed against [`src/types/index.ts`](src/types/index.ts). The resume is served from
 `public/Muzzary_Babar_Resume.pdf` and viewed at the `/resume` route; replace that file (and
 update `RESUME_FILE` if renamed) to swap in a new resume.
 
