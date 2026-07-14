@@ -20,14 +20,14 @@ export const HERO = {
   roles: [
     'a Software Engineer.',
     1800,
-    'a Full-Stack Developer.',
+    'a Full-Stack (MERN) Developer.',
     1800,
-    'an AI / ML Engineer.',
+    'an AI / LLM Integration Engineer.',
     1800,
-    'a builder who ships.',
+    'a builder who benchmarks his own work.',
     1800,
   ] as (string | number)[],
-  bio: "Computer Science graduate from GCU Lahore who designs, builds, and ships real applications across full-stack web development and AI/ML. I care about clean, tested code and measuring whether what I build actually works.",
+  bio: "Computer Science graduate from GCU Lahore building AI-integrated software across full-stack web and applied ML. I ship real products — a local-first RAG desktop app, a deployed MERN app with an AI career assistant, and a benchmarked coding agent — then measure whether they actually work.",
   location: 'Lahore, Pakistan',
 }
 
