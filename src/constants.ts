@@ -130,15 +130,27 @@ export const PROJECTS: Project[] = [
  *  Experience component; `accent` tints the badge background. */
 export const EXPERIENCE: Experience[] = [
   {
-    role: 'Software Engineer (Full-Stack Developer)',
-    company: 'AlpharexX',
+    role: 'Software Engineer Intern (Full-Stack Developer)',
+    company: 'AlpharexX · AI & Automation Products',
     period: 'Jun 2026 – Present · Remote',
     icon: 'rocket',
     accent: '#ef4444',
     highlights: [
-      'Full-stack web development and backend API development on long-term product vision.',
-      'Server deployment & infrastructure management, plus AI integration and model training support.',
-      'Performance optimization, database design & maintenance, and bug fixing.',
+      'Full-stack web and backend API development, working directly with the founder to ship secure, scalable, production-ready AI products.',
+      'Server deployment, infrastructure management, and server security / cybersecurity implementation.',
+      'AI integration and model-training support, plus performance optimization, database design, and bug fixing.',
+    ],
+  },
+  {
+    role: 'Python Development Intern',
+    company: 'Khizex Software Solutions',
+    period: 'Summer 2026 · 6 weeks · Remote',
+    icon: 'intern',
+    accent: '#3776ab',
+    highlights: [
+      'Built Python features on live production projects with direct business impact.',
+      'Practised agile delivery through weekly team sync-ups and specialised workshops with senior engineers.',
+      'Delivered a final project report documenting contributions (Ref: KX/INT/PYD/044).',
     ],
   },
   {
@@ -148,9 +160,9 @@ export const EXPERIENCE: Experience[] = [
     icon: 'freelance',
     accent: '#000000',
     highlights: [
-      'Delivered web, database, ML, NLP, and software projects for international clients, remotely from requirements to delivery.',
+      'Delivered web, database, ML, NLP, and software projects for international clients — including a foreign university and UK-based clients — remotely from requirements to delivery.',
       'Maintained a 100% on-time delivery record with positive feedback across all engagements.',
-      'Managed each project independently, making technical decisions and communicating across time zones.',
+      'Managed each project independently, making technical decisions and communicating clearly across time zones.',
     ],
   },
 ]
