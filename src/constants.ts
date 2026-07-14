@@ -1,4 +1,4 @@
-import type { Certification, Experience, Project, Skill, Socials, Stat } from './types'
+import type { Certification, Experience, Project, Skill, Socials, Stat, Value } from './types'
 
 /** Outbound contact links. The email here is the public-facing personal address. */
 export const SOCIALS: Socials = {
@@ -203,6 +203,26 @@ export const EXPERIENCE: Experience[] = [
       'Maintained a 100% on-time delivery record with positive feedback across all engagements.',
       'Managed each project independently, making technical decisions and communicating clearly across time zones.',
     ],
+  },
+]
+
+/** Guiding principles — the engineering philosophy behind the work. */
+export const VALUES: Value[] = [
+  {
+    title: "Measure it, don't assume it.",
+    body: "Retrieval thresholds in CiteFinder are tuned from a labelled gold set. The mimicfable benchmark uses hidden graders validated before any run.",
+  },
+  {
+    title: 'Publish the negative result.',
+    body: "mimicfable's headline finding is that correctness was a tie. I published it, corrected an earlier over-claim, and disclosed a confound I found in my own methodology.",
+  },
+  {
+    title: 'Never let the model lie.',
+    body: 'Every AI tool I ship carries an honesty guardrail: CiteFinder refuses rather than fabricate a source, and JobTracker’s resume tailor declines rather than invent experience.',
+  },
+  {
+    title: 'Choose reliable over impressive.',
+    body: "JobTracker's AI assistant was originally a true tool-calling planner. It was slower and flakier, so I replaced it with parallel tools and wrote down why.",
   },
 ]
 

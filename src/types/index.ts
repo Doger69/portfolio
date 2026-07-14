@@ -50,6 +50,12 @@ export interface Experience {
   highlights: string[]
 }
 
+/** A guiding principle shown in the philosophy section. */
+export interface Value {
+  title: string
+  body: string
+}
+
 /** A verifiable professional certification. */
 export interface Certification {
   name: string

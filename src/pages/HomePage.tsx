@@ -6,6 +6,7 @@ import AboutMe from '../components/AboutMe/AboutMe'
 import Experience from '../components/Experience/Experience'
 import Projects from '../components/Projects/Projects'
 import Certifications from '../components/Certifications/Certifications'
+import Values from '../components/Values/Values'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Experience />
         <Projects />
         <Certifications />
+        <Values />
         <Contact />
       </main>
       <Footer />
