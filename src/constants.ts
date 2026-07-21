@@ -115,6 +115,26 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '04',
+    title: 'Face Recognition Attendance System',
+    meta: 'Biometric Attendance Platform · 2026',
+    description:
+      'A multi-threaded biometric attendance platform pairing YuNet face detection with SFace embeddings, benchmarked at 2,418 matches/sec across a 1,000-employee gallery. A three-signal, multi-frame liveness check rejects photo spoofs, tuned over three rounds of real-hardware testing. The FastAPI backend adds JWT, role-based access, and tenant isolation, fronted by a React/TypeScript dashboard with a live camera feed. Backed by 224 backend tests, with SQLite load-tested to 50,000 events at sub-50ms report queries.',
+    technologies: ['Python', 'OpenCV', 'FastAPI', 'SQLite', 'React', 'TypeScript'],
+    liveUrl: null,
+    sourceUrl: 'https://github.com/muzzary/Face_Recognition_Attendance_System',
+  },
+  {
+    id: '05',
+    title: 'Secure Local Password Manager',
+    meta: 'Encrypted CLI Vault · 2026',
+    description:
+      'A fully local, encrypted password vault with Argon2id key derivation and AES-256-GCM authenticated encryption, storing zero plaintext secrets and making zero network calls. Per-entry associated-data binding blocks ciphertext-swap attacks, and a mutex-guarded session prevents a torn-key race under concurrent access. Argon2id is tuned to a 220ms unlock, with idle auto-lock and safe, non-overwriting clipboard auto-clear. Backed by 65 tests, including one proving the raw vault file never contains a plaintext password.',
+    technologies: ['Python', 'Argon2id', 'AES-256-GCM', 'SQLite'],
+    liveUrl: null,
+    sourceUrl: 'https://github.com/muzzary/secure-local-password-manager',
+  },
+  {
+    id: '06',
     title: 'Job Hunt Agent',
     meta: 'Personal Outreach Automation Tool · 2026',
     description:
@@ -124,7 +144,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '05',
+    id: '07',
     title: 'Sales Automation System',
     meta: 'Final Year Project · 2025–2026',
     description:
@@ -134,7 +154,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '06',
+    id: '08',
     title: 'Student Grade Prediction',
     meta: 'Machine Learning Model · 2024',
     description:
@@ -144,7 +164,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '07',
+    id: '09',
     title: 'Cinema Database System',
     meta: 'Academic Project',
     description:
@@ -154,7 +174,7 @@ export const PROJECTS: Project[] = [
     sourceUrl: null,
   },
   {
-    id: '08',
+    id: '10',
     title: 'Online Learning Platform',
     meta: 'System Design · Academic Project',
     description:
