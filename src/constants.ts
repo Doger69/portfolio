@@ -27,15 +27,15 @@ export const HERO = {
     'a builder who benchmarks his own work.',
     1800,
   ] as (string | number)[],
-  bio: "Computer Science graduate from GCU Lahore building AI-integrated software across full-stack web and applied ML. I ship real products — a local-first RAG desktop app, a deployed MERN app with an AI career assistant, and a benchmarked coding agent — then measure whether they actually work.",
+  bio: "Computer Science graduate from GCU Lahore building AI-integrated software across full-stack web and applied ML. I ship real products: a local-first RAG desktop app, a deployed MERN app with an AI career assistant, and a benchmarked coding agent, then measure whether they actually work.",
   location: 'Lahore, Pakistan',
 }
 
-/** About section — multi-paragraph bio. */
+/** About section: multi-paragraph bio. */
 export const ABOUT_PARAGRAPHS: string[] = [
   "I'm a Computer Science graduate from GCU Lahore who builds AI-integrated software and then measures whether it actually works.",
   "I built CiteFinder, a local-first RAG desktop app that answers only from a user's own PDFs and cites the exact file and page. I benchmarked retrieval on a 7,000+ chunk corpus and raised accuracy from 0.50 to 0.92 hit@1 by selecting a better embedding model, then shipped the whole stack as a one-click Windows installer.",
-  "I designed and deployed a full-stack MERN app end to end — JWT auth, bcrypt, rate limiting, 20 automated API tests, and an LLM feature that scores how well a resume matches a job. Most recently I built mimicfable, a Claude Code subagent with a reproducible 12-run benchmark against baseline Opus, and published the honest result: correctness was a tie; the real difference was test discipline.",
+  "I designed and deployed a full-stack MERN app end to end: JWT auth, bcrypt, rate limiting, 20 automated API tests, and an LLM feature that scores how well a resume matches a job. Most recently I built mimicfable, a Claude Code subagent with a reproducible 12-run benchmark against baseline Opus, and published the honest result: correctness was a tie; the real difference was test discipline.",
   "I'm currently a Software Engineer Intern at AlpharexX, working on full-stack development, backend APIs, server security, and AI integration. I work daily with AI coding assistants, care about clean and tested code, and prefer building things that work over things that just demo well.",
 ]
 
@@ -88,7 +88,7 @@ export const PROJECTS: Project[] = [
     title: 'mimicfable',
     meta: 'A Disciplined Coding Agent, Benchmarked Honestly · 2026',
     description:
-      "A custom Claude Code subagent plus a fully reproducible 12-run benchmark against baseline Opus, graded by hidden test suites validated before every run. I published the honest headline: correctness was a 46/46 tie — the replicated edge was test discipline (regression suites in 4/7 tasks vs 1/7). I corrected an earlier over-claim publicly and disclosed a confound I found in my own methodology.",
+      "A custom Claude Code subagent plus a fully reproducible 12-run benchmark against baseline Opus, graded by hidden test suites validated before every run. I published the honest headline: correctness was a 46/46 tie; the replicated edge was test discipline (regression suites in 4/7 tasks vs 1/7). I corrected an earlier over-claim publicly and disclosed a confound I found in my own methodology.",
     technologies: ['Claude Code SDK', 'Node.js', 'Python', 'Benchmarking', 'git'],
     liveUrl: null,
     sourceUrl: 'https://github.com/muzzary/mimicfable',
@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
     title: 'CiteFinder',
     meta: 'Local-First RAG Citation Assistant · 2026',
     description:
-      "A local-first desktop app that answers strictly from a user's own PDFs and attributes every answer to a file and page. A hybrid pipeline (pgvector dense search + Postgres full-text, fused with Reciprocal Rank Fusion) plus a data-driven embedder swap raised retrieval from 0.50 to 0.92 hit@1 and 0.72 to 0.94 MRR on a 7,000+ chunk corpus. A strict grounding gate refuses off-topic queries before any LLM call, so it never fabricates a source. Ships as a one-click Windows installer with bundled PostgreSQL — no Docker.",
+      "A local-first desktop app that answers strictly from a user's own PDFs and attributes every answer to a file and page. A hybrid pipeline (pgvector dense search + Postgres full-text, fused with Reciprocal Rank Fusion) plus a data-driven embedder swap raised retrieval from 0.50 to 0.92 hit@1 and 0.72 to 0.94 MRR on a 7,000+ chunk corpus. A strict grounding gate refuses off-topic queries before any LLM call, so it never fabricates a source. Ships as a one-click Windows installer with bundled PostgreSQL, no Docker.",
     technologies: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'ONNX', 'LLMs'],
     liveUrl: null,
     sourceUrl: 'https://github.com/muzzary/citefinder',
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     title: 'Job Hunt Agent',
     meta: 'Personal Outreach Automation Tool · 2026',
     description:
-      'A tool that does the boring 90% of a job search — finding people, researching them, and drafting honest first messages — while I keep the human 10%: review and send. Ranks every contact 0–100 offline, enriches only the top few to conserve a free search budget, extracts one real recent fact per company (with a source link) or falls back to an honest opener, and classifies each email as verified or guessed. Enforces a strict never-auto-send rule.',
+      'A tool that does the boring 90% of a job search, finding people, researching them, and drafting honest first messages, while I keep the human 10%: review and send. Ranks every contact 0–100 offline, enriches only the top few to conserve a free search budget, extracts one real recent fact per company (with a source link) or falls back to an honest opener, and classifies each email as verified or guessed. Enforces a strict never-auto-send rule.',
     technologies: ['Python', 'Groq API', 'Google CSE', 'Hunter.io', 'Apollo'],
     liveUrl: null,
     sourceUrl: null,
@@ -193,20 +193,20 @@ export const EXPERIENCE: Experience[] = [
     ],
   },
   {
-    role: 'Independent Freelancer — Software, Web, ML & Database',
+    role: 'Independent Freelancer, Software, Web, ML & Database',
     company: 'Self-employed · International clients',
     period: '2023 – Present',
     icon: 'freelance',
     accent: '#000000',
     highlights: [
-      'Delivered web, database, ML, NLP, and software projects for international clients — including a foreign university and UK-based clients — remotely from requirements to delivery.',
+      'Delivered web, database, ML, NLP, and software projects for international clients, including a foreign university and UK-based clients, remotely from requirements to delivery.',
       'Maintained a 100% on-time delivery record with positive feedback across all engagements.',
       'Managed each project independently, making technical decisions and communicating clearly across time zones.',
     ],
   },
 ]
 
-/** Guiding principles — the engineering philosophy behind the work. */
+/** Guiding principles: the engineering philosophy behind the work. */
 export const VALUES: Value[] = [
   {
     title: "Measure it, don't assume it.",

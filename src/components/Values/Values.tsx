@@ -2,7 +2,7 @@ import { VALUES } from '../../constants'
 import Reveal from '../UI/Reveal'
 import SectionHeading from '../UI/SectionHeading'
 
-/** Engineering philosophy — the principles behind how the work gets built. */
+/** Engineering philosophy: the principles behind how the work gets built. */
 export default function Values() {
   return (
     <section id="values" className="scroll-mt-20 bg-ink py-20 text-cream md:py-28">

@@ -3,9 +3,9 @@ import Reveal from '../UI/Reveal'
 import SectionHeading from '../UI/SectionHeading'
 
 const FOCUS = [
-  'Full-stack web apps (MERN) — designed, built, and deployed end to end',
-  'AI / LLM systems — RAG pipelines, retrieval evaluation, and agent benchmarking',
-  'Clean, tested code — REST APIs, auth, and honest measurement over hype',
+  'Full-stack web apps (MERN), designed, built, and deployed end to end',
+  'AI / LLM systems: RAG pipelines, retrieval evaluation, and agent benchmarking',
+  'Clean, tested code: REST APIs, auth, and honest measurement over hype',
 ]
 
 export default function AboutMe() {

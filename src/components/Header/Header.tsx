@@ -16,7 +16,7 @@ export default function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     close()
-    // An open mobile menu locks body scroll — release it now, synchronously, so the
+    // An open mobile menu locks body scroll; release it now, synchronously, so the
     // scroll below actually lands (the close() effect would only get to it next render).
     document.body.style.overflow = ''
     document.querySelector(href)?.scrollIntoView()
