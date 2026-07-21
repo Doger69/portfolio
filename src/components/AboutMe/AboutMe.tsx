@@ -5,6 +5,7 @@ import SectionHeading from '../UI/SectionHeading'
 const FOCUS = [
   'Full-stack web apps (MERN), designed, built, and deployed end to end',
   'AI / LLM systems: RAG pipelines, retrieval evaluation, and agent benchmarking',
+  'Applied security and computer vision: encrypted vaults and real-time biometric pipelines',
   'Clean, tested code: REST APIs, auth, and honest measurement over hype',
 ]
 
@@ -30,7 +31,7 @@ export default function AboutMe() {
               </div>
               <div className="flex justify-between border-b border-cream/10 pb-3">
                 <dt className="text-cream/50">Focus</dt>
-                <dd className="font-medium">Full-Stack · AI / ML</dd>
+                <dd className="font-medium">Full-Stack · AI · Security</dd>
               </div>
               <div className="flex justify-between">
                 <dt className="text-cream/50">Availability</dt>

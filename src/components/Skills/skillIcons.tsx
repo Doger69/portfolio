@@ -26,8 +26,10 @@ import {
   SiVercel,
   SiLinux,
   SiOnnx,
+  SiOpencv,
+  SiSqlite,
 } from 'react-icons/si'
-import { FaJava, FaDatabase, FaMagnifyingGlass, FaCode } from 'react-icons/fa6'
+import { FaJava, FaDatabase, FaMagnifyingGlass, FaCode, FaShieldHalved } from 'react-icons/fa6'
 import { TbApi, TbVectorTriangle } from 'react-icons/tb'
 
 /** Maps a skill `icon` slug (from constants) to a brand/concept glyph.
@@ -44,6 +46,8 @@ const ICONS: Record<string, IconType> = {
   rag: FaMagnifyingGlass,
   vector: TbVectorTriangle,
   onnx: SiOnnx,
+  opencv: SiOpencv,
+  security: FaShieldHalved,
   openai: SiOpenai,
   scikitlearn: SiScikitlearn,
   pandas: SiPandas,
@@ -65,6 +69,7 @@ const ICONS: Record<string, IconType> = {
   pgvector: SiPostgresql,
   mongodb: SiMongodb,
   mysql: SiMysql,
+  sqlite: SiSqlite,
   // Testing & Tools
   jest: SiJest,
   github: SiGithub,

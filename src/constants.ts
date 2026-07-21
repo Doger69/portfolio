@@ -46,9 +46,9 @@ export const STATS: Stat[] = [
   { value: '12', label: 'benchmark runs · 46/46 hidden checks' },
   { value: '20', label: 'automated backend tests, LLM mocked' },
   { value: '12', label: 'JWT-secured REST endpoints' },
-  { value: '80%', label: 'less manual outreach effort' },
+  { value: '2,418', label: 'face matches/sec, 1,000-employee gallery' },
   { value: '100%', label: 'on-time freelance delivery' },
-  { value: '3', label: 'live shipped products' },
+  { value: '5', label: 'shipped products' },
 ]
 
 /** Flat, curated skills shown as square icon cards.
@@ -64,13 +64,16 @@ export const SKILLS: Skill[] = [
   { name: 'Express', icon: 'express' },
   { name: 'FastAPI', icon: 'fastapi' },
   { name: 'JWT', icon: 'jwt' },
+  { name: 'Security', icon: 'security' },
   { name: 'Tailwind', icon: 'tailwind' },
   { name: 'MongoDB', icon: 'mongodb' },
   { name: 'PostgreSQL', icon: 'postgresql' },
   { name: 'MySQL', icon: 'mysql' },
+  { name: 'SQLite', icon: 'sqlite' },
   { name: 'RAG', icon: 'rag' },
   { name: 'Vector Search', icon: 'vector' },
   { name: 'ONNX', icon: 'onnx' },
+  { name: 'OpenCV', icon: 'opencv' },
   { name: 'LLM APIs', icon: 'openai' },
   { name: 'scikit-learn', icon: 'scikitlearn' },
   { name: 'Pandas', icon: 'pandas' },
