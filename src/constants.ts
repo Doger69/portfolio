@@ -36,7 +36,7 @@ export const ABOUT_PARAGRAPHS: string[] = [
   "I'm a Computer Science graduate from GCU Lahore who builds AI-integrated software and then measures whether it actually works.",
   "I built CiteFinder, a local-first RAG desktop app that answers only from a user's own PDFs and cites the exact file and page. I benchmarked retrieval on a 7,000+ chunk corpus and raised accuracy from 0.50 to 0.92 hit@1 by selecting a better embedding model, then shipped the whole stack as a one-click Windows installer.",
   "I designed and deployed a full-stack MERN app end to end: JWT auth, bcrypt, rate limiting, 20 automated API tests, and an LLM feature that scores how well a resume matches a job. Most recently I built mimicfable, a Claude Code subagent with a reproducible 12-run benchmark against baseline Opus, and published the honest result: correctness was a tie; the real difference was test discipline.",
-  "I'm currently a Software Engineer Intern at AlpharexX, working on full-stack development, backend APIs, server security, and AI integration. I work daily with AI coding assistants, care about clean and tested code, and prefer building things that work over things that just demo well.",
+  "I'm currently a Software Developer Intern at AlpharexX, working on real-world AI, automation, and Python-based products: back-end development, LLM integrations, and feature delivery. I work daily with AI coding assistants, care about clean and tested code, and prefer building things that work over things that just demo well.",
 ]
 
 /** Headline metrics shown in the stats strip below the hero. */
@@ -192,15 +192,14 @@ export const PROJECTS: Project[] = [
  *  Experience component; `accent` tints the badge background. */
 export const EXPERIENCE: Experience[] = [
   {
-    role: 'Software Engineer Intern (Full-Stack Developer)',
-    company: 'AlpharexX · AI & Automation Products',
+    role: 'Software Developer Intern',
+    company: 'AlpharexX · Karachi-based startup',
     period: 'Jun 2026 – Present · Remote',
     icon: 'rocket',
     accent: '#ef4444',
     highlights: [
-      'Full-stack web and backend API development, working directly with the founder to ship secure, scalable, production-ready AI products.',
-      'Server deployment, infrastructure management, and server security / cybersecurity implementation.',
-      'AI integration and model-training support, plus performance optimization, database design, and bug fixing.',
+      'Building real-world AI, automation, and Python-based products in a fast-paced startup environment.',
+      'Contributing to back-end development, AI and LLM integrations, and feature delivery alongside the engineering team.',
     ],
   },
   {
