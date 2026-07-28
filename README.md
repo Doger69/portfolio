@@ -1,8 +1,15 @@
-# Muzzary Babar — Portfolio
+# Muzzary Babar, Portfolio
 
 A single-page personal portfolio built with **React + TypeScript**, **Vite**, **Tailwind CSS v4**, and **Motion**. Content is fully data-driven from [`src/constants.ts`](src/constants.ts).
 
 **Sections:** hero → stats strip → skills → about → experience → projects → certifications → philosophy → contact.
+
+## Featured work
+
+- **mimicfable** (A Disciplined Coding Agent, Benchmarked Honestly · 2026): a Claude Code subagent with a reproducible benchmark against baseline Opus.
+- **CiteFinder** (Local-First RAG Citation Assistant · 2026): answers strictly from your own PDFs and cites the exact file and page.
+- **JobTracker** (Full-Stack MERN App with AI Assistant · 2026): deployed Kanban tracker with a free AI assistant on every application.
+- **Face Recognition Attendance System** (Biometric Attendance Platform · 2026): multi-threaded face-recognition attendance with liveness anti-spoofing.
 
 ## Stack
 
