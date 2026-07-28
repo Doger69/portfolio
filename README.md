@@ -41,7 +41,7 @@ npm run dev        # http://localhost:5173
 
 ## Contact form (EmailJS)
 
-The form works without configuration — if no keys are set it falls back to opening the
+The form works without configuration: if no keys are set it falls back to opening the
 visitor's email client via `mailto:`. To send through EmailJS instead:
 
 1. Create a free account at <https://www.emailjs.com/>.
@@ -60,14 +60,14 @@ visitor's email client via `mailto:`. To send through EmailJS instead:
 ## Editing content
 
 All copy and data live in [`src/constants.ts`](src/constants.ts): hero/about text, headline
-stats, skills, projects, experience, certifications, philosophy values, and social links —
+stats, skills, projects, experience, certifications, philosophy values, and social links,
 each typed against [`src/types/index.ts`](src/types/index.ts). The resume is served from
 `public/Muzzary_Babar_Resume.pdf` and viewed at the `/resume` route; replace that file (and
 update `RESUME_FILE` if renamed) to swap in a new resume.
 
 ## Deployment
 
-**Vercel / Netlify (recommended, zero-config):** import the repo — `npm run build`, output `dist/`.
+**Vercel / Netlify (recommended, zero-config):** import the repo, `npm run build`, output `dist/`.
 Leave `base` unset in `vite.config.ts` (already the default here).
 
 **GitHub Pages:**
