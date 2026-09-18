@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import { HERO, SOCIALS } from '../../constants'
 import Button from '../UI/Button'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../UI/icons'
+import HeroOrbit from './HeroOrbit'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -99,22 +100,22 @@ export default function Hero() {
           </motion.ul>
         </div>
 
-        {/* Profile photo */}
+        {/* Profile photo with animated orbit effect */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="order-first flex items-center justify-center md:order-last"
         >
-          <div className="relative mx-auto flex w-full max-w-xs items-center justify-center sm:max-w-sm md:max-w-md">
+          <HeroOrbit>
             <img
               src={`${import.meta.env.BASE_URL}hero-illustration.png`}
               alt="Zain Waqar - Mobile Application & MERN Stack Developer"
-              className="mx-auto max-h-[440px] w-auto max-w-full object-contain object-bottom drop-shadow-xl sm:max-h-[500px] md:max-h-[540px]"
+              className="h-full w-full object-cover object-top"
               loading="eager"
               decoding="async"
             />
-          </div>
+          </HeroOrbit>
         </motion.div>
       </div>
     </section>
@@ -132,10 +133,17 @@ function SocialLink({
   children: React.ReactNode
   external?: boolean
 }) {
+  const handleClick = () => {
+    if (href.startsWith('mailto:')) {
+      window.location.href = href
+    }
+  }
+
   return (
     <li>
       <a
         href={href}
+        onClick={handleClick}
         aria-label={label}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-ink/70 transition-all hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-cream"

@@ -45,8 +45,21 @@ export default function Button({ variant = 'primary', className, children, ...re
   const classes = cn(base, variants[variant], className)
 
   if ('href' in rest && rest.href !== undefined) {
+    const { href, onClick, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (onClick) onClick(e)
+      if (!e.defaultPrevented && href.startsWith('#')) {
+        e.preventDefault()
+        const target = document.querySelector(href)
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' })
+          history.pushState(null, '', href)
+        }
+      }
+    }
+
     return (
-      <a className={classes} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a href={href} onClick={handleClick} className={classes} {...anchorRest}>
         {children}
       </a>
     )

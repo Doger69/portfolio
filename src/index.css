@@ -52,3 +52,91 @@
     cursor: none;
   }
 }
+
+/* ── Hero Orbit Animations ─────────────────────────────────────────────── */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-float {
+  0%, 100% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes orbit-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-orbit-track {
+  animation: orbit-spin 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-orbit-counter {
+  animation: orbit-spin-reverse 20s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-orbit-ring {
+  animation: orbit-spin 28s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-orbit-streak {
+  animation: orbit-spin 46s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes orbit-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-orbit-pulse {
+  animation: orbit-pulse 3.6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-orbit-float {
+  animation: orbit-float 3.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-orbit-twinkle {
+  animation: orbit-twinkle 2.8s ease-in-out infinite;
+  will-change: opacity, transform;
+}

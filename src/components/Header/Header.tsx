@@ -10,16 +10,17 @@ export default function Header() {
   const { isOpen, toggle, close } = useMobileMenu()
   const [scrolled, setScrolled] = useState(false)
 
-  /** HashRouter owns the URL hash, so a bare `href="#about"` would be read as the
-   *  route "/about", match no <Route>, and render a blank page. Scroll ourselves
-   *  instead and never let the hash change. */
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     close()
     // An open mobile menu locks body scroll; release it now, synchronously, so the
     // scroll below actually lands (the close() effect would only get to it next render).
     document.body.style.overflow = ''
-    document.querySelector(href)?.scrollIntoView()
+    const el = document.querySelector(href)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      history.pushState(null, '', href)
+    }
   }
 
   // Add a backdrop/shadow once the page is scrolled past the hero fold.

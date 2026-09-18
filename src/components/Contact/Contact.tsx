@@ -1,49 +1,110 @@
-import { useRef, useState, type FormEvent } from 'react'
-import emailjs from '@emailjs/browser'
+import { useState, type FormEvent } from 'react'
 import { PHONE, SOCIALS } from '../../constants'
+import { cn } from '../../lib/cn'
 import Button from '../UI/Button'
 import Reveal from '../UI/Reveal'
 import SectionHeading from '../UI/SectionHeading'
 import { GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon } from '../UI/icons'
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const WEB3FORMS_ACCESS_KEY = '1a83f8f1-7124-4dff-8d18-8e106f70308f'
 
-/** True only when all three EmailJS credentials are present at build time. */
-const EMAILJS_CONFIGURED = Boolean(SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY)
+interface FormData {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
+interface FormErrors {
+  name?: string
+  email?: string
+  subject?: string
+}
+
+const INITIAL_FORM: FormData = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+}
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null)
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM)
+  const [errors, setErrors] = useState<FormErrors>({})
   const [status, setStatus] = useState<Status>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (!formRef.current || status === 'sending') return
+    if (status === 'sending') return
 
-    // If keys aren't configured, fall back to the user's mail client.
-    if (!EMAILJS_CONFIGURED) {
-      const data = new FormData(formRef.current)
-      const subject = encodeURIComponent(String(data.get('subject') ?? 'Portfolio enquiry'))
-      const body = encodeURIComponent(
-        `${data.get('message') ?? ''}\n\nFrom: ${data.get('name') ?? ''} (${data.get('email') ?? ''})`,
-      )
-      window.location.href = `mailto:${SOCIALS.email}?subject=${subject}&body=${body}`
+    const newErrors: FormErrors = {}
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required.'
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      newErrors.email = 'Please enter a valid email address.'
+    }
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required.'
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
       return
     }
 
+    setErrors({})
     setStatus('sending')
     setErrorMsg('')
+
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, { publicKey: PUBLIC_KEY })
-      setStatus('success')
-      formRef.current.reset()
-    } catch (err) {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+        }),
+      })
+
+      const data = await response.json().catch(() => null)
+
+      if (response.ok && data?.success) {
+        setStatus('success')
+        setFormData(INITIAL_FORM)
+      } else {
+        setStatus('error')
+        setErrorMsg(
+          data?.message ||
+            'Something went wrong — please try emailing me directly at zaindogar.dev@gmail.com instead.',
+        )
+      }
+    } catch {
       setStatus('error')
-      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+      setErrorMsg(
+        'Something went wrong — please try emailing me directly at zaindogar.dev@gmail.com instead.',
+      )
     }
   }
 
@@ -79,16 +140,39 @@ export default function Contact() {
         {/* Right: form */}
         <Reveal delay={0.1}>
           <form
-            ref={formRef}
             onSubmit={handleSubmit}
             noValidate
             className="rounded-3xl border border-zinc-150 bg-white p-6 sm:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name" name="name" type="text" autoComplete="name" />
-              <Field label="Email" name="email" type="email" autoComplete="email" />
+              <Field
+                label="Name"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                error={errors.name}
+                autoComplete="name"
+              />
+              <Field
+                label="Email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={errors.email}
+                autoComplete="email"
+              />
             </div>
-            <Field label="Subject" name="subject" type="text" className="mt-4" />
+            <Field
+              label="Subject"
+              name="subject"
+              type="text"
+              value={formData.subject}
+              onChange={handleChange}
+              error={errors.subject}
+              className="mt-4"
+            />
             <div className="mt-4">
               <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink/70">
                 Message
@@ -96,8 +180,9 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                required
                 rows={5}
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full resize-y rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink focus:bg-white"
               />
             </div>
@@ -108,11 +193,11 @@ export default function Contact() {
 
             <p role="status" aria-live="polite" className="mt-4 min-h-5 text-center text-sm">
               {status === 'success' && (
-                <span className="font-medium text-ink">Thanks! Your message has been sent. ✅</span>
+                <span className="font-medium text-ink">Message sent! I&apos;ll get back to you soon. ✅</span>
               )}
               {status === 'error' && <span className="font-medium text-accent">{errorMsg}</span>}
-              {status === 'idle' && !EMAILJS_CONFIGURED && (
-                <span className="text-ink/40">Submitting opens your email client.</span>
+              {status === 'idle' && (
+                <span className="text-ink/40">I&apos;ll reply within a day or two.</span>
               )}
             </p>
           </form>
@@ -126,12 +211,18 @@ function Field({
   label,
   name,
   type,
+  value,
+  onChange,
+  error,
   autoComplete,
   className,
 }: {
   label: string
   name: string
   type: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  error?: string
   autoComplete?: string
   className?: string
 }) {
@@ -144,10 +235,15 @@ function Field({
         id={name}
         name={name}
         type={type}
-        required
+        value={value}
+        onChange={onChange}
         autoComplete={autoComplete}
-        className="w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm outline-none transition-colors focus:border-ink focus:bg-white"
+        className={cn(
+          'w-full rounded-xl border bg-cream px-4 py-3 text-sm outline-none transition-colors focus:bg-white',
+          error ? 'border-accent focus:border-accent' : 'border-ink/15 focus:border-ink',
+        )}
       />
+      {error && <p className="mt-1 text-xs font-medium text-accent">{error}</p>}
     </div>
   )
 }
@@ -163,10 +259,17 @@ function ContactRow({
   label: string
   external?: boolean
 }) {
+  const handleClick = () => {
+    if (href.startsWith('mailto:') || href.startsWith('tel:')) {
+      window.location.href = href
+    }
+  }
+
   return (
     <li>
       <a
         href={href}
+        onClick={handleClick}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="group inline-flex items-center gap-3 text-ink/80 transition-colors hover:text-ink"
       >
