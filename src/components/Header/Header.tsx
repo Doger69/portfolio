@@ -51,7 +51,7 @@ export default function Header() {
           className="font-display text-xl font-extrabold tracking-tight"
           onClick={(e) => handleNavClick(e, '#hero')}
         >
-          Muzzary<span className="text-accent">.</span>
+          Zain<span className="text-accent">.</span>
         </a>
 
         {/* Desktop nav */}

@@ -4,81 +4,92 @@ import {
   SiJavascript,
   SiTypescript,
   SiCplusplus,
-  SiOpenai,
-  SiScikitlearn,
-  SiPandas,
+  SiKotlin,
+  SiFlutter,
+  SiDart,
+  SiAndroid,
+  SiAndroidstudio,
+  SiJetpackcompose,
+  SiMaterialdesign,
+  SiGit,
+  SiApple,
   SiReact,
-  SiTailwindcss,
-  SiHtml5,
-  SiCss,
-  SiReactrouter,
-  SiAxios,
-  SiNodedotjs,
+  SiNextdotjs,
   SiExpress,
-  SiFastapi,
-  SiJsonwebtokens,
-  SiPostgresql,
   SiMongodb,
+  SiFastapi,
+  SiPostgresql,
   SiMysql,
-  SiJest,
+  SiSqlite,
   SiGithub,
-  SiDocker,
   SiVercel,
   SiLinux,
-  SiOnnx,
-  SiOpencv,
-  SiSqlite,
+  SiJsonwebtokens,
+  SiScikitlearn,
+  SiSpacy,
 } from 'react-icons/si'
-import { FaJava, FaDatabase, FaMagnifyingGlass, FaCode, FaShieldHalved } from 'react-icons/fa6'
-import { TbApi, TbVectorTriangle } from 'react-icons/tb'
+import { FaJava, FaDatabase, FaCode, FaNetworkWired, FaLayerGroup, FaMobileScreenButton, FaArrowsRotate } from 'react-icons/fa6'
+import { TbApi, TbBrandCpp } from 'react-icons/tb'
 
 /** Maps a skill `icon` slug (from constants) to a brand/concept glyph.
  *  Concepts without an official brand mark use a representative generic icon. */
 const ICONS: Record<string, IconType> = {
+  // Mobile & Cross-Platform
+  flutter: SiFlutter,
+  dart: SiDart,
+  getx: FaArrowsRotate,
+  materialdesign: SiMaterialdesign,
+  ios: SiApple,
+  mobile: FaMobileScreenButton,
+
+  // Android Native
+  kotlin: SiKotlin,
+  android: SiAndroid,
+  compose: SiJetpackcompose,
+  androidstudio: SiAndroidstudio,
+  room: FaDatabase,
+  mvvm: FaLayerGroup,
+  retrofit: TbApi,
+
   // Languages
+  java: FaJava,
   python: SiPython,
+  cpp: SiCplusplus || TbBrandCpp,
   javascript: SiJavascript,
   typescript: SiTypescript,
   sql: FaDatabase,
-  cpp: SiCplusplus,
-  java: FaJava,
-  // AI / ML
-  rag: FaMagnifyingGlass,
-  vector: TbVectorTriangle,
-  onnx: SiOnnx,
-  opencv: SiOpencv,
-  security: FaShieldHalved,
-  openai: SiOpenai,
-  scikitlearn: SiScikitlearn,
-  pandas: SiPandas,
-  // Frontend
+
+  // Web, MERN & Backend
   react: SiReact,
-  tailwind: SiTailwindcss,
-  html5: SiHtml5,
-  css3: SiCss,
-  reactrouter: SiReactrouter,
-  axios: SiAxios,
-  // Backend
-  nodejs: SiNodedotjs,
+  nextjs: SiNextdotjs,
   express: SiExpress,
-  fastapi: SiFastapi,
-  rest: TbApi,
-  jwt: SiJsonwebtokens,
-  // Databases
-  postgresql: SiPostgresql,
-  pgvector: SiPostgresql,
   mongodb: SiMongodb,
-  mysql: SiMysql,
+  fastapi: SiFastapi,
+  jwt: SiJsonwebtokens,
+  rest: TbApi,
+
+  // Databases
   sqlite: SiSqlite,
-  // Testing & Tools
-  jest: SiJest,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+
+  // Tools & Practices
+  git: SiGit,
   github: SiGithub,
-  docker: SiDocker,
   vercel: SiVercel,
   linux: SiLinux,
+  agile: FaArrowsRotate,
+
+  // Core CS & ML
+  dsa: FaCode,
+  oop: FaLayerGroup,
+  networks: FaNetworkWired,
+  scikitlearn: SiScikitlearn,
+  spacy: SiSpacy || FaCode,
 }
 
 /** Resolve a slug to its icon component, falling back to a generic code glyph. */
 export function getSkillIcon(slug: string | undefined): IconType {
   return (slug && ICONS[slug]) || FaCode
 }
+

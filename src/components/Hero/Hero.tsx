@@ -53,7 +53,7 @@ export default function Hero() {
               speed={45}
               repeat={Infinity}
               cursor
-              aria-label="Roles: Software Engineer, Full-Stack Developer, AI/ML Engineer"
+              aria-label="Roles: Mobile Application Developer, MERN Stack Developer, Flutter & Cross-Platform Engineer, Full-Stack Developer"
             />
           </motion.div>
 
@@ -99,20 +99,22 @@ export default function Hero() {
           </motion.ul>
         </div>
 
-        {/* Illustration */}
+        {/* Profile photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="order-first md:order-last"
+          className="order-first flex items-center justify-center md:order-last"
         >
-          <img
-            src="/portfolio/hero-illustration.png"
-            alt="Illustration of a developer working on a laptop at a desk"
-            className="mx-auto w-full max-w-sm object-contain md:max-w-md"
-            loading="eager"
-            decoding="async"
-          />
+          <div className="relative mx-auto flex w-full max-w-xs items-center justify-center sm:max-w-sm md:max-w-md">
+            <img
+              src={`${import.meta.env.BASE_URL}hero-illustration.png`}
+              alt="Zain Waqar - Mobile Application & MERN Stack Developer"
+              className="mx-auto max-h-[440px] w-auto max-w-full object-contain object-bottom drop-shadow-xl sm:max-h-[500px] md:max-h-[540px]"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

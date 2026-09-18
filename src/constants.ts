@@ -2,189 +2,130 @@ import type { Certification, Experience, Project, Skill, Socials, Stat, Value } 
 
 /** Outbound contact links. The email here is the public-facing personal address. */
 export const SOCIALS: Socials = {
-  github: 'https://github.com/muzzary',
-  linkedin: 'https://www.linkedin.com/in/muzzarybabar',
-  email: 'muzzarybabar@gmail.com',
+  github: 'https://github.com/Doger69',
+  linkedin: 'https://www.linkedin.com/in/zain-waqar',
+  email: 'zaindogar.dev@gmail.com',
 }
+
+/** Direct phone number from resume. */
+export const PHONE = '+92 346 1963984'
 
 /** In-app route for the resume viewer page. */
 export const RESUME_PAGE = '/resume'
 
 /** Resume PDF served from /public (used by the viewer + the download button). */
-export const RESUME_FILE = '/Muzzary_Babar_Resume.pdf'
+export const RESUME_FILE = `${import.meta.env.BASE_URL}Zain_Waqar_Resume.pdf`
 
 /** Hero section copy. `roles` cycle through the typing animation. */
 export const HERO = {
   greeting: "Hi, I'm",
-  name: 'Muzzary Babar',
+  name: 'Zain Waqar',
   roles: [
-    'a Software Engineer.',
+    'a Mobile Application Developer.',
     1800,
-    'a Full-Stack (MERN) Developer.',
+    'a MERN Stack Developer.',
     1800,
-    'an AI / LLM Integration Engineer.',
+    'a Flutter & Cross-Platform Engineer.',
     1800,
-    'a builder who benchmarks his own work.',
+    'a Full-Stack & Web Developer.',
+    1800,
+    'a Computer Science Graduate from GCU.',
     1800,
   ] as (string | number)[],
-  bio: "Computer Science graduate from GCU Lahore building AI-integrated software across full-stack web and applied ML. I ship real products: a local-first RAG desktop app, a deployed MERN app with an AI career assistant, and a benchmarked coding agent, then measure whether they actually work.",
+  bio: 'Mobile Application & MERN Stack Developer with production experience shipping a comprehensive POS checkout system in Flutter & GetX — featuring reactive state management, offline-first data persistence, and REST API integration. Completed BSc in Computer Science at GC University Lahore, actively building cross-platform mobile apps and modern full-stack web solutions with React, Next.js, and Node.',
   location: 'Lahore, Pakistan',
 }
 
 /** About section: multi-paragraph bio. */
 export const ABOUT_PARAGRAPHS: string[] = [
-  "I'm a Computer Science graduate from GCU Lahore who builds AI-integrated software and then measures whether it actually works.",
-  "I built CiteFinder, a local-first RAG desktop app that answers only from a user's own PDFs and cites the exact file and page. I benchmarked retrieval on a 7,000+ chunk corpus and raised accuracy from 0.50 to 0.92 hit@1 by selecting a better embedding model, then shipped the whole stack as a one-click Windows installer.",
-  "I designed and deployed a full-stack MERN app end to end: JWT auth, bcrypt, rate limiting, 20 automated API tests, and an LLM feature that scores how well a resume matches a job. Most recently I built mimicfable, a Claude Code subagent with a reproducible 12-run benchmark against baseline Opus, and published the honest result: correctness was a tie; the real difference was test discipline.",
-  "I'm currently a Software Developer Intern at AlpharexX, working on real-world AI, automation, and Python-based products: back-end development, LLM integrations, and feature delivery. I work daily with AI coding assistants, care about clean and tested code, and prefer building things that work over things that just demo well.",
+  "I'm a Computer Science graduate from GC University Lahore with production mobile experience, passionate about building responsive, robust, and user-centric mobile applications.",
+  "At Gen-T AI Solutions, I developed the checkout and shift management flow for a production point-of-sale (POS) application. I built an offline-first caching layer ensuring reliable local data persistence during connectivity drops with automatic background sync, integrated camera-based barcode scanning for rapid product lookups, and systematically debugged race conditions in real-time state updates across multi-step checkout flows.",
+  "My cross-platform toolkit centers around Flutter and GetX with pixel-accurate Material Design components across iOS and Android. In parallel, I actively build native Android applications leveraging Kotlin, Jetpack Compose, MVVM architecture, ViewModel, LiveData/StateFlow, Coroutines, and Room for local persistence.",
+  "Beyond application development, I bring strong computer science fundamentals in Data Structures & Algorithms, OOP, and Software Engineering — demonstrated in projects ranging from custom Huffman & RLE image compression in Java to an end-to-end ATS resume analysis platform.",
 ]
 
-/** Headline metrics shown in the stats strip below the hero. */
+/** Headline metrics shown in the stats strip below the hero.
+ *  Entries corresponding to unverified production metrics preserve bracketed placeholders [X]. */
 export const STATS: Stat[] = [
-  { value: '0.50 → 0.92', label: 'hit@1 retrieval accuracy (CiteFinder)' },
-  { value: '7,000+', label: 'chunk ground-truthed eval corpus' },
-  { value: '12', label: 'benchmark runs · 46/46 hidden checks' },
-  { value: '20', label: 'automated backend tests, LLM mocked' },
-  { value: '12', label: 'JWT-secured REST endpoints' },
-  { value: '2,418', label: 'face matches/sec, 1,000-employee gallery' },
-  { value: '100%', label: 'on-time freelance delivery' },
-  { value: '5', label: 'shipped products' },
+  { value: '[X]%', label: 'reduction in data errors (offline POS sync on reconnect)' },
+  { value: '[X]', label: 'screens delivered with pixel-accurate Material Design UI' },
+  { value: '3+', label: 'development stacks (Flutter, Android, MERN)' },
+  { value: '2026', label: 'BSc Computer Science graduate, GCU Lahore' },
+  { value: '3', label: 'shipped production & featured projects' },
+  { value: '1', label: 'production POS checkout system shipped' },
+  { value: '[X]s', label: 'cut in checkout time via camera barcode scanning' },
+  { value: 'Agile', label: 'collaborative sprint & Git review delivery' },
 ]
 
 /** Flat, curated skills shown as square icon cards.
  *  `icon` is a slug resolved to a brand glyph in `components/Skills/skillIcons`. */
 export const SKILLS: Skill[] = [
-  { name: 'Python', icon: 'python' },
-  { name: 'JavaScript', icon: 'javascript' },
-  { name: 'TypeScript', icon: 'typescript' },
+  // Mobile & Cross-Platform
+  { name: 'Flutter', icon: 'flutter' },
+  { name: 'Dart', icon: 'dart' },
+  { name: 'Kotlin', icon: 'kotlin' },
+  { name: 'Android SDK', icon: 'android' },
+  { name: 'GetX', icon: 'getx' },
+  { name: 'Android Studio', icon: 'androidstudio' },
+  { name: 'iOS & Android', icon: 'ios' },
+
+  // Programming Languages
   { name: 'Java', icon: 'java' },
-  { name: 'C++', icon: 'cpp' },
-  { name: 'React', icon: 'react' },
-  { name: 'Node.js', icon: 'nodejs' },
-  { name: 'Express', icon: 'express' },
-  { name: 'FastAPI', icon: 'fastapi' },
-  { name: 'JWT', icon: 'jwt' },
-  { name: 'Security', icon: 'security' },
-  { name: 'Tailwind', icon: 'tailwind' },
+  { name: 'Python', icon: 'python' },
+  { name: 'C / C++', icon: 'cpp' },
+  { name: 'JavaScript', icon: 'javascript' },
+  { name: 'SQL', icon: 'sql' },
+
+  // Web, MERN & Backend
+  { name: 'React.js', icon: 'react' },
+  { name: 'Next.js', icon: 'nextjs' },
+  { name: 'Express.js', icon: 'express' },
   { name: 'MongoDB', icon: 'mongodb' },
-  { name: 'PostgreSQL', icon: 'postgresql' },
-  { name: 'MySQL', icon: 'mysql' },
-  { name: 'SQLite', icon: 'sqlite' },
-  { name: 'RAG', icon: 'rag' },
-  { name: 'Vector Search', icon: 'vector' },
-  { name: 'ONNX', icon: 'onnx' },
-  { name: 'OpenCV', icon: 'opencv' },
-  { name: 'LLM APIs', icon: 'openai' },
-  { name: 'scikit-learn', icon: 'scikitlearn' },
-  { name: 'Pandas', icon: 'pandas' },
-  { name: 'Docker', icon: 'docker' },
-  { name: 'Vercel', icon: 'vercel' },
+  { name: 'REST APIs', icon: 'rest' },
+  { name: 'FastAPI', icon: 'fastapi' },
   { name: 'Git / GitHub', icon: 'github' },
-  { name: 'Linux', icon: 'linux' },
-  { name: 'Jest', icon: 'jest' },
+  { name: 'SQLite', icon: 'sqlite' },
+  { name: 'MySQL', icon: 'mysql' },
+  { name: 'Agile / Scrum', icon: 'agile' },
+
+  // Core Computer Science
+  { name: 'Data Structures', icon: 'dsa' },
+  { name: 'Algorithms', icon: 'dsa' },
+  { name: 'OOP', icon: 'oop' },
+  { name: 'Networks', icon: 'networks' },
 ]
 
-/** Featured projects, ordered by impact. */
+/** Featured projects from resume. */
 export const PROJECTS: Project[] = [
   {
     id: '01',
-    title: 'mimicfable',
-    meta: 'A Disciplined Coding Agent, Benchmarked Honestly · 2026',
+    title: 'Food Delivery Mobile App',
+    meta: 'Cross-Platform Mobile App · Flutter & Dart',
     description:
-      "A custom Claude Code subagent plus a fully reproducible 12-run benchmark against baseline Opus, graded by hidden test suites validated before every run. I published the honest headline: correctness was a 46/46 tie; the replicated edge was test discipline (regression suites in 4/7 tasks vs 1/7). I corrected an earlier over-claim publicly and disclosed a confound I found in my own methodology.",
-    technologies: ['Claude Code SDK', 'Node.js', 'Python', 'Benchmarking', 'git'],
+      'Built a cross-platform food delivery app for Android & iOS with Home, Orders, Login, and Profile screens and bottom navigation routing. Designed reusable custom widgets (FoodItemCard, CategoryCard) for a scalable UI architecture, implementing search, category browsing, and card-based menu listings.',
+    technologies: ['Flutter', 'Dart', 'Material Design', 'Android', 'iOS', 'UI/UX'],
     liveUrl: null,
-    sourceUrl: 'https://github.com/muzzary/mimicfable',
+    sourceUrl: 'https://github.com/Doger69/Food-Delivery-App',
   },
   {
     id: '02',
-    title: 'CiteFinder',
-    meta: 'Local-First RAG Citation Assistant · 2026',
+    title: 'Image Compression Tool',
+    meta: 'Desktop GUI Application · Java, Swing & DSA',
     description:
-      "A local-first desktop app that answers strictly from a user's own PDFs and attributes every answer to a file and page. A hybrid pipeline (pgvector dense search + Postgres full-text, fused with Reciprocal Rank Fusion) plus a data-driven embedder swap raised retrieval from 0.50 to 0.92 hit@1 and 0.72 to 0.94 MRR on a 7,000+ chunk corpus. A strict grounding gate refuses off-topic queries before any LLM call, so it never fabricates a source. Ships as a one-click Windows installer with bundled PostgreSQL, no Docker.",
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'ONNX', 'LLMs'],
+      'Built a desktop GUI application implementing JPEG, Run Length Encoding (RLE), and Huffman Coding from scratch using frequency analysis, a min heap priority queue, and binary tree construction. Implemented a row-by-row RLE encoder with binary file I/O and an interactive file picker interface with real-time compression feedback.',
+    technologies: ['Java', 'Swing', 'Data Structures', 'Algorithms', 'Binary File I/O'],
     liveUrl: null,
-    sourceUrl: 'https://github.com/muzzary/citefinder',
+    sourceUrl: 'https://github.com/Doger69/Image-Compression-Tool',
   },
   {
     id: '03',
-    title: 'JobTracker',
-    meta: 'Full-Stack MERN App with AI Assistant · 2026',
+    title: 'Smart Resume Analyzer',
+    meta: 'Full-Stack Web App · NLP & FastAPI',
     description:
-      'A deployed MERN app that tracks job applications on a drag-and-drop Kanban board and runs a free AI assistant on every application. Ships a 12-endpoint REST API with JWT + bcrypt auth, rate limiting, ownership-scoped queries, and 20 automated Jest/Supertest tests with the LLM mocked. The AI resume matcher scores fit 0–100 with unmet requirements; I re-architected the assistant from a flaky tool-calling planner into reliable parallel tools and documented why.',
-    technologies: ['React 18', 'Node.js', 'Express', 'MongoDB', 'JWT', 'OpenRouter', 'Jest'],
-    liveUrl: 'https://job-tracker-muzzary.vercel.app',
-    sourceUrl: 'https://github.com/muzzary/job-tracker',
-  },
-  {
-    id: '04',
-    title: 'Face Recognition Attendance System',
-    meta: 'Biometric Attendance Platform · 2026',
-    description:
-      'A multi-threaded biometric attendance platform pairing YuNet face detection with SFace embeddings, benchmarked at 2,418 matches/sec across a 1,000-employee gallery. A three-signal, multi-frame liveness check rejects photo spoofs, tuned over three rounds of real-hardware testing. The FastAPI backend adds JWT, role-based access, and tenant isolation, fronted by a React/TypeScript dashboard with a live camera feed. Backed by 224 backend tests, with SQLite load-tested to 50,000 events at sub-50ms report queries.',
-    technologies: ['Python', 'OpenCV', 'FastAPI', 'SQLite', 'React', 'TypeScript'],
-    liveUrl: null,
-    sourceUrl: 'https://github.com/muzzary/Face_Recognition_Attendance_System',
-  },
-  {
-    id: '05',
-    title: 'Secure Local Password Manager',
-    meta: 'Encrypted CLI Vault · 2026',
-    description:
-      'A fully local, encrypted password vault with Argon2id key derivation and AES-256-GCM authenticated encryption, storing zero plaintext secrets and making zero network calls. Per-entry associated-data binding blocks ciphertext-swap attacks, and a mutex-guarded session prevents a torn-key race under concurrent access. Argon2id is tuned to a 220ms unlock, with idle auto-lock and safe, non-overwriting clipboard auto-clear. Backed by 65 tests, including one proving the raw vault file never contains a plaintext password.',
-    technologies: ['Python', 'Argon2id', 'AES-256-GCM', 'SQLite'],
-    liveUrl: null,
-    sourceUrl: 'https://github.com/muzzary/secure-local-password-manager',
-  },
-  {
-    id: '06',
-    title: 'Job Hunt Agent',
-    meta: 'Personal Outreach Automation Tool · 2026',
-    description:
-      'A tool that does the boring 90% of a job search, finding people, researching them, and drafting honest first messages, while I keep the human 10%: review and send. Ranks every contact 0–100 offline, enriches only the top few to conserve a free search budget, extracts one real recent fact per company (with a source link) or falls back to an honest opener, and classifies each email as verified or guessed. Enforces a strict never-auto-send rule.',
-    technologies: ['Python', 'Groq API', 'Google CSE', 'Hunter.io', 'Apollo'],
-    liveUrl: null,
-    sourceUrl: null,
-  },
-  {
-    id: '07',
-    title: 'Sales Automation System',
-    meta: 'Final Year Project · 2025–2026',
-    description:
-      'A three-layer LinkedIn outreach automation pipeline that automates lead discovery, message personalisation, and CRM routing, cutting manual outreach effort by an estimated 80%. Uses an LLM for sentiment and skill-match scoring, with fault-tolerant n8n workflows, retry queues, and error-state handling.',
-    technologies: ['Python', 'n8n', 'GPT-4', 'Puppeteer', 'Google Sheets'],
-    liveUrl: null,
-    sourceUrl: null,
-  },
-  {
-    id: '08',
-    title: 'Student Grade Prediction',
-    meta: 'Machine Learning Model · 2024',
-    description:
-      'Trained and compared Decision Tree, SVM, and Random Forest models to predict student grades from academic and behavioural features. Improved accuracy through data cleaning, feature engineering, cross-validation, and hyperparameter tuning, delivered with visualisations and a written performance analysis.',
-    technologies: ['Python', 'scikit-learn', 'Pandas', 'Jupyter'],
-    liveUrl: null,
-    sourceUrl: null,
-  },
-  {
-    id: '09',
-    title: 'Cinema Database System',
-    meta: 'Academic Project',
-    description:
-      'A normalized relational database covering movies, bookings, users, and payments. Includes optimized SQL queries, stored procedures, a full ER diagram, and normalization documentation.',
-    technologies: ['SQL', 'MySQL', 'ER Design', 'Normalization'],
-    liveUrl: null,
-    sourceUrl: null,
-  },
-  {
-    id: '10',
-    title: 'Online Learning Platform',
-    meta: 'System Design · Academic Project',
-    description:
-      'Full pre-implementation documentation, including an SRS, use-case diagrams, DFDs, and system architecture for an e-learning platform designed to serve 500+ users, applying SDLC and agile planning principles.',
-    technologies: ['Software Engineering', 'UML', 'DFD', 'SDLC'],
-    liveUrl: null,
-    sourceUrl: null,
+      'Developed a full-stack web app with a REST API (FastAPI, JWT authentication) and an NLP pipeline (scikit-learn / spaCy) scoring resume to job description ATS compatibility, with role-based candidate/employer dashboards.',
+    technologies: ['Python', 'FastAPI', 'React.js', 'NLP', 'scikit-learn', 'spaCy', 'JWT'],
+    liveUrl: 'https://resume-analyzer-eight-ecru.vercel.app',
+    sourceUrl: 'https://github.com/Doger69/Resume-Analyzer',
   },
 ]
 
@@ -192,38 +133,17 @@ export const PROJECTS: Project[] = [
  *  Experience component; `accent` tints the badge background. */
 export const EXPERIENCE: Experience[] = [
   {
-    role: 'Software Developer Intern',
-    company: 'AlpharexX · Karachi-based startup',
-    period: 'Jun 2026 – Present · Remote',
+    role: 'Mobile Application Developer',
+    company: 'Gen-T AI Solutions',
+    period: 'June 2026 – Present',
     icon: 'rocket',
     accent: '#ef4444',
     highlights: [
-      'Building real-world AI, automation, and Python-based products in a fast-paced startup environment.',
-      'Contributing to back-end development, AI and LLM integrations, and feature delivery alongside the engineering team.',
-    ],
-  },
-  {
-    role: 'Python Development Intern',
-    company: 'Khizex Software Solutions',
-    period: 'Summer 2026 · 6 weeks · Remote',
-    icon: 'intern',
-    accent: '#3776ab',
-    highlights: [
-      'Built Python features on live production projects with direct business impact.',
-      'Practised agile delivery through weekly team sync-ups and specialised workshops with senior engineers.',
-      'Delivered a final project report documenting contributions (Ref: KX/INT/PYD/044).',
-    ],
-  },
-  {
-    role: 'Independent Freelancer, Software, Web, ML & Database',
-    company: 'Self-employed · International clients',
-    period: '2023 – Present',
-    icon: 'freelance',
-    accent: '#000000',
-    highlights: [
-      'Delivered web, database, ML, NLP, and software projects for international clients, including a foreign university and UK-based clients, remotely from requirements to delivery.',
-      'Maintained a 100% on-time delivery record with positive feedback across all engagements.',
-      'Managed each project independently, making technical decisions and communicating clearly across time zones.',
+      'Shipped the checkout and shift management flow for a production POS app used by [store staff / X locations], cutting cash handling data integrity errors by [X%] through systematic debugging of race conditions in real time state updates.',
+      'Delivered a fully offline capable checkout experience with zero data loss during connectivity drops, measured by [X% of transactions completed offline without sync errors], by building a local first caching layer with automatic background sync on reconnect.',
+      'Cut average in store checkout time by [X seconds/%] by integrating camera based barcode scanning with real time product lookup against a REST API backend.',
+      'Reduced design QA revision cycles to near zero across [X] screens by implementing pixel accurate, responsive UI matched against an existing desktop/web design system using Material Design components.',
+      'Kept a [X] person cross functional team shipping on schedule across [X] sprints by collaborating daily in an Agile workflow with disciplined Git branching and structured code review practices.',
     ],
   },
 ]
@@ -231,46 +151,25 @@ export const EXPERIENCE: Experience[] = [
 /** Guiding principles: the engineering philosophy behind the work. */
 export const VALUES: Value[] = [
   {
-    title: "Measure it, don't assume it.",
-    body: "Retrieval thresholds in CiteFinder are tuned from a labelled gold set. The mimicfable benchmark uses hidden graders validated before any run.",
+    title: 'Offline-first is non-negotiable.',
+    body: 'Network connectivity is unpredictable in real-world retail and on-the-go mobile environments. Local-first caching layers and resilient background sync safeguard data integrity and ensure a seamless user experience even when disconnected.',
   },
   {
-    title: 'Publish the negative result.',
-    body: "mimicfable's headline finding is that correctness was a tie. I published it, corrected an earlier over-claim, and disclosed a confound I found in my own methodology.",
+    title: 'Pixel-accurate, responsive UI.',
+    body: 'Great apps feel native on every display. I focus on fluid animations, structured Material Design components, and consistent layout behavior across diverse screen sizes and densities.',
   },
   {
-    title: 'Never let the model lie.',
-    body: 'Every AI tool I ship carries an honesty guardrail: CiteFinder refuses rather than fabricate a source, and JobTracker’s resume tailor declines rather than invent experience.',
+    title: 'Clean architecture over quick hacks.',
+    body: 'Scalable mobile apps demand disciplined separation of concerns. Clear MVVM patterns, reactive state management with GetX or StateFlow, and structured repositories make code testable and maintainable.',
   },
   {
-    title: 'Choose reliable over impressive.',
-    body: "JobTracker's AI assistant was originally a true tool-calling planner. It was slower and flakier, so I replaced it with parallel tools and wrote down why.",
+    title: 'Rigorous fundamentals & code review.',
+    body: 'From binary I/O and tree structures to Git branching and pull request reviews in Agile sprints, solid CS foundations ensure reliable, performant software delivery.',
   },
 ]
 
-/** Verified certifications, all issued 2026 with no expiry. */
-export const CERTIFICATIONS: Certification[] = [
-  {
-    name: 'Model Context Protocol: Advanced Topics',
-    issuer: 'Anthropic',
-    url: 'https://verify.skilljar.com/c/4dvscats6hew',
-  },
-  {
-    name: 'Introduction to Model Context Protocol',
-    issuer: 'Anthropic',
-    url: 'https://verify.skilljar.com/c/gj5h2zs6dk3w',
-  },
-  {
-    name: 'Claude Code 101',
-    issuer: 'Anthropic',
-    url: 'https://verify.skilljar.com/c/mvtrmteapvhr',
-  },
-  {
-    name: 'Introduction to Claude Cowork',
-    issuer: 'Anthropic',
-    url: 'https://verify.skilljar.com/c/u8wkfrvsigfh',
-  },
-]
+/** Verified certifications placeholder (retained for type-safety). */
+export const CERTIFICATIONS: Certification[] = []
 
 /** Navigation links shared by the header (desktop + mobile). */
 export const NAV_LINKS = [
@@ -278,6 +177,5 @@ export const NAV_LINKS = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ] as const

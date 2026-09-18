@@ -51,7 +51,11 @@ export default function ResumePage() {
             >
               <ExternalLinkIcon /> Open in new tab
             </a>
-            <a href={RESUME_FILE} download className={buttonClasses('primary', 'px-5 py-2.5')}>
+            <a
+              href={RESUME_FILE}
+              download="Zain_Waqar_Resume.pdf"
+              className={buttonClasses('primary', 'px-5 py-2.5')}
+            >
               <DownloadIcon /> Download PDF
             </a>
           </div>
@@ -67,7 +71,7 @@ export default function ResumePage() {
         >
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-ink/50">Curriculum Vitae</p>
           <h1 className="mt-2 font-display text-4xl font-extrabold sm:text-5xl">
-            Muzzary <span className="text-outline">Babar</span>
+            Zain <span className="text-outline">Waqar</span>
           </h1>
         </motion.div>
       </div>
@@ -81,7 +85,11 @@ export default function ResumePage() {
               <p className="text-ink/70">
                 Your browser can&apos;t display the PDF inline.
               </p>
-              <a href={RESUME_FILE} download className={buttonClasses('primary')}>
+              <a
+                href={RESUME_FILE}
+                download="Zain_Waqar_Resume.pdf"
+                className={buttonClasses('primary')}
+              >
                 <DownloadIcon /> Download the resume
               </a>
             </div>

@@ -1,10 +1,10 @@
 import { useRef, useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
-import { SOCIALS } from '../../constants'
+import { PHONE, SOCIALS } from '../../constants'
 import Button from '../UI/Button'
 import Reveal from '../UI/Reveal'
 import SectionHeading from '../UI/SectionHeading'
-import { GitHubIcon, LinkedInIcon, MailIcon } from '../UI/icons'
+import { GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon } from '../UI/icons'
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -65,8 +65,14 @@ export default function Contact() {
               label={SOCIALS.email}
               external={false}
             />
-            <ContactRow href={SOCIALS.linkedin} icon={<LinkedInIcon />} label="linkedin.com/in/muzzarybabar" />
-            <ContactRow href={SOCIALS.github} icon={<GitHubIcon />} label="github.com/muzzary" />
+            <ContactRow
+              href={`tel:${PHONE.replace(/\s+/g, '')}`}
+              icon={<PhoneIcon />}
+              label={PHONE}
+              external={false}
+            />
+            <ContactRow href={SOCIALS.linkedin} icon={<LinkedInIcon />} label="linkedin.com/in/zain-waqar" />
+            <ContactRow href={SOCIALS.github} icon={<GitHubIcon />} label="github.com/Doger69" />
           </ul>
         </Reveal>
 

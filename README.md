@@ -1,15 +1,14 @@
-# Muzzary Babar, Portfolio
+# Zain Waqar · Portfolio
 
 A single-page personal portfolio built with **React + TypeScript**, **Vite**, **Tailwind CSS v4**, and **Motion**. Content is fully data-driven from [`src/constants.ts`](src/constants.ts).
 
-**Sections:** hero → stats strip → skills → about → experience → projects → certifications → philosophy → contact.
+**Sections:** hero → stats strip → skills → about → experience → projects → philosophy → contact.
 
 ## Featured work
 
-- **mimicfable** (A Disciplined Coding Agent, Benchmarked Honestly · 2026): a Claude Code subagent with a reproducible benchmark against baseline Opus.
-- **CiteFinder** (Local-First RAG Citation Assistant · 2026): answers strictly from your own PDFs and cites the exact file and page.
-- **JobTracker** (Full-Stack MERN App with AI Assistant · 2026): deployed Kanban tracker with a free AI assistant on every application.
-- **Face Recognition Attendance System** (Biometric Attendance Platform · 2026): multi-threaded face-recognition attendance with liveness anti-spoofing.
+- **Food Delivery Mobile App** (Cross-Platform Mobile App · Flutter & Dart): cross-platform mobile app for Android & iOS with custom widgets, menu browsing, and bottom navigation.
+- **Image Compression Tool** (Desktop GUI Application · Java, Swing & DSA): custom Huffman, RLE, and JPEG compression algorithms implemented from scratch with binary file I/O.
+- **Smart Resume Analyzer** (Full-Stack Web App · NLP & FastAPI): ATS compatibility scoring engine using an NLP pipeline (spaCy/scikit-learn) with FastAPI REST backend and React frontend.
 
 ## Stack
 
@@ -60,9 +59,9 @@ visitor's email client via `mailto:`. To send through EmailJS instead:
 ## Editing content
 
 All copy and data live in [`src/constants.ts`](src/constants.ts): hero/about text, headline
-stats, skills, projects, experience, certifications, philosophy values, and social links,
+stats, skills, projects, experience, philosophy values, and social links,
 each typed against [`src/types/index.ts`](src/types/index.ts). The resume is served from
-`public/Muzzary_Babar_Resume.pdf` and viewed at the `/resume` route; replace that file (and
+`public/Zain_Waqar_Resume.pdf` and viewed at the `/resume` route; replace that file (and
 update `RESUME_FILE` if renamed) to swap in a new resume.
 
 ## Deployment

@@ -3,17 +3,22 @@ import Reveal from '../UI/Reveal'
 import SectionHeading from '../UI/SectionHeading'
 
 const FOCUS = [
-  'Full-stack web apps (MERN), designed, built, and deployed end to end',
-  'AI / LLM systems: RAG pipelines, retrieval evaluation, and agent benchmarking',
-  'Applied security and computer vision: encrypted vaults and real-time biometric pipelines',
-  'Clean, tested code: REST APIs, auth, and honest measurement over hype',
+  'Mobile app development with Flutter & Dart across Android and iOS',
+  'Full-stack web & MERN development with React, Next.js, Node.js & MongoDB',
+  'Offline-first architecture: local caching, automatic background sync & REST APIs',
+  'Hardware & UI integration: camera barcode scanning and responsive cross-platform UI',
 ]
 
 export default function AboutMe() {
   return (
     <section id="about" className="scroll-mt-20 py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
-        {/* Left: heading + portrait card */}
+        {/* Left: heading + quick-facts card
+            NOTE: This component intentionally uses a stylized typographic card rather than
+            a photo/avatar image. No photo of the previous owner was ever used here.
+            If you wish to add your personal photo here in the future, you can insert an
+            <img> element above or inside this card.
+        */}
         <Reveal>
           <SectionHeading eyebrow="Get to know me" solid="About" outline="Me" className="mb-8" />
           <div className="rounded-3xl bg-ink p-8 text-cream">
@@ -31,7 +36,7 @@ export default function AboutMe() {
               </div>
               <div className="flex justify-between border-b border-cream/10 pb-3">
                 <dt className="text-cream/50">Focus</dt>
-                <dd className="font-medium">Full-Stack · AI · Security</dd>
+                <dd className="font-medium">Mobile · MERN · Flutter</dd>
               </div>
               <div className="flex justify-between">
                 <dt className="text-cream/50">Availability</dt>

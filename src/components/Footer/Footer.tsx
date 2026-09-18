@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="text-center md:text-left">
             <a href="#hero" className="font-display text-xl font-extrabold tracking-tight">
-              Muzzary<span className="text-accent">.</span>
+              Zain<span className="text-accent">.</span>
             </a>
-            <p className="mt-1 text-sm text-ink/50">Software Engineer · Full-Stack · AI / ML</p>
+            <p className="mt-1 text-sm text-ink/50">Junior Android &amp; Mobile Developer</p>
           </div>
 
           <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
@@ -38,12 +38,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-ink/10 pt-6 text-center text-xs text-ink/45 sm:flex-row sm:text-left">
-          <p>© {YEAR} Muzzary Babar. All rights reserved.</p>
-          <p>
-            Design inspired by Jhanvi Shah&apos;s Illustration Portfolio template · Built with React,
-            Vite &amp; Tailwind CSS.
-          </p>
+        <div className="mt-10 border-t border-ink/10 pt-6 text-center text-xs text-ink/45">
+          <p>© {YEAR} Zain Waqar. All rights reserved.</p>
         </div>
       </div>
     </footer>

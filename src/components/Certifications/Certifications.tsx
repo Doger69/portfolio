@@ -5,6 +5,8 @@ import { ExternalLinkIcon } from '../UI/icons'
 
 /** Verified credentials, each linking to its public verification page. */
 export default function Certifications() {
+  if (CERTIFICATIONS.length === 0) return null
+
   return (
     <section id="certifications" className="scroll-mt-20 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
