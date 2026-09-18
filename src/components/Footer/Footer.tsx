@@ -1,4 +1,6 @@
 import { NAV_LINKS, SOCIALS } from '../../constants'
+import { useToast } from '../../contexts/ToastContext'
+import { copyToClipboard } from '../../lib/clipboard'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../UI/icons'
 
 const YEAR = new Date().getFullYear()
@@ -76,9 +78,23 @@ function FooterIcon({
   children: React.ReactNode
   external?: boolean
 }) {
+  const { showToast } = useToast()
+
+  const handleClick = () => {
+    if (href.startsWith('mailto:')) {
+      const email = href.replace(/^mailto:/, '').split('?')[0]
+      copyToClipboard(email).then((copied) => {
+        if (copied) {
+          showToast(`Email copied: ${email}`)
+        }
+      })
+    }
+  }
+
   return (
     <a
       href={href}
+      onClick={handleClick}
       aria-label={label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 text-ink/60 transition-all hover:border-ink hover:bg-ink hover:text-cream"

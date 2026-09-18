@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { PHONE, SOCIALS } from '../../constants'
+import { useToast } from '../../contexts/ToastContext'
+import { copyToClipboard } from '../../lib/clipboard'
 import { cn } from '../../lib/cn'
 import Button from '../UI/Button'
 import Reveal from '../UI/Reveal'
@@ -259,10 +261,31 @@ function ContactRow({
   label: string
   external?: boolean
 }) {
+  const { showToast } = useToast()
+
+  const handleClick = () => {
+    if (href.startsWith('mailto:')) {
+      const email = href.replace(/^mailto:/, '').split('?')[0]
+      copyToClipboard(email).then((copied) => {
+        if (copied) {
+          showToast(`Email copied: ${email}`)
+        }
+      })
+    } else if (href.startsWith('tel:')) {
+      const phone = href.replace(/^tel:/, '')
+      copyToClipboard(phone).then((copied) => {
+        if (copied) {
+          showToast(`Phone copied: ${phone}`)
+        }
+      })
+    }
+  }
+
   return (
     <li>
       <a
         href={href}
+        onClick={handleClick}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="group inline-flex items-center gap-3 text-ink/80 transition-colors hover:text-ink"
       >

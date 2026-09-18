@@ -1,6 +1,8 @@
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'motion/react'
 import { HERO, SOCIALS } from '../../constants'
+import { useToast } from '../../contexts/ToastContext'
+import { copyToClipboard } from '../../lib/clipboard'
 import Button from '../UI/Button'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../UI/icons'
 import HeroOrbit from './HeroOrbit'
@@ -133,10 +135,24 @@ function SocialLink({
   children: React.ReactNode
   external?: boolean
 }) {
+  const { showToast } = useToast()
+
+  const handleClick = () => {
+    if (href.startsWith('mailto:')) {
+      const email = href.replace(/^mailto:/, '').split('?')[0]
+      copyToClipboard(email).then((copied) => {
+        if (copied) {
+          showToast(`Email copied: ${email}`)
+        }
+      })
+    }
+  }
+
   return (
     <li>
       <a
         href={href}
+        onClick={handleClick}
         aria-label={label}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-ink/70 transition-all hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-cream"
