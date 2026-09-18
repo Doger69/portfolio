@@ -259,17 +259,10 @@ function ContactRow({
   label: string
   external?: boolean
 }) {
-  const handleClick = () => {
-    if (href.startsWith('mailto:') || href.startsWith('tel:')) {
-      window.location.href = href
-    }
-  }
-
   return (
     <li>
       <a
         href={href}
-        onClick={handleClick}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="group inline-flex items-center gap-3 text-ink/80 transition-colors hover:text-ink"
       >

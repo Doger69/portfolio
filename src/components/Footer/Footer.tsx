@@ -76,16 +76,9 @@ function FooterIcon({
   children: React.ReactNode
   external?: boolean
 }) {
-  const handleClick = () => {
-    if (href.startsWith('mailto:')) {
-      window.location.href = href
-    }
-  }
-
   return (
     <a
       href={href}
-      onClick={handleClick}
       aria-label={label}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 text-ink/60 transition-all hover:border-ink hover:bg-ink hover:text-cream"

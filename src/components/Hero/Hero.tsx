@@ -133,17 +133,10 @@ function SocialLink({
   children: React.ReactNode
   external?: boolean
 }) {
-  const handleClick = () => {
-    if (href.startsWith('mailto:')) {
-      window.location.href = href
-    }
-  }
-
   return (
     <li>
       <a
         href={href}
-        onClick={handleClick}
         aria-label={label}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-ink/70 transition-all hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-cream"
